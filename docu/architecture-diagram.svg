@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f5f5f5"/>
+  
+  <!-- GCP Cloud -->
+  <path d="M50,100 L750,100 L750,550 L50,550 Z" fill="#ffffff" stroke="#4285F4" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="400" y="130" font-family="Arial" font-size="20" text-anchor="middle" fill="#4285F4">Google Cloud Platform</text>
+  
+  <!-- VPC Network -->
+  <rect x="100" y="150" width="600" height="350" fill="#e6f2ff" stroke="#3367d6" stroke-width="2" rx="10"/>
+  <text x="400" y="175" font-family="Arial" font-size="16" text-anchor="middle" fill="#3367d6">Custom VPC Network</text>
+  
+  <!-- Private Cloud Run Subnet -->
+  <rect x="130" y="190" width="540" height="280" fill="#d0e0f7" stroke="#3367d6" stroke-width="1" stroke-dasharray="5,3" rx="5"/>
+  <text x="400" y="210" font-family="Arial" font-size="14" text-anchor="middle" fill="#3367d6">Private Cloud Run Subnet</text>
+  
+  <!-- Cloud Run Services -->
+  <rect x="150" y="230" width="180" height="100" fill="#ffffff" stroke="#4285F4" stroke-width="2" rx="5"/>
+  <text x="240" y="260" font-family="Arial" font-size="14" text-anchor="middle" fill="#4285F4">Private Cloud Run Service</text>
+  <text x="240" y="280" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Internal Traffic Only</text>
+  
+  <rect x="150" y="350" width="180" height="100" fill="#ffffff" stroke="#4285F4" stroke-width="2" rx="5"/>
+  <text x="240" y="380" font-family="Arial" font-size="14" text-anchor="middle" fill="#4285F4">Public Cloud Run Service</text>
+  <text x="240" y="400" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">Internet Accessible</text>
+  
+  <!-- Vertex AI -->
+  <rect x="470" y="230" width="180" height="100" fill="#ffffff" stroke="#0f9d58" stroke-width="2" rx="5"/>
+  <text x="560" y="260" font-family="Arial" font-size="14" text-anchor="middle" fill="#0f9d58">Vertex AI</text>
+  <text x="560" y="280" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">GenAI Models</text>
+  
+  <!-- Secret Manager -->
+  <rect x="470" y="350" width="180" height="100" fill="#ffffff" stroke="#f4b400" stroke-width="2" rx="5"/>
+  <text x="560" y="380" font-family="Arial" font-size="14" text-anchor="middle" fill="#f4b400">Secret Manager</text>
+  <text x="560" y="400" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">API Keys, Credentials</text>
+  
+  <!-- Internet Gateway -->
+  <path d="M400,80 L450,50 L350,50 Z" fill="#ffffff" stroke="#ea4335" stroke-width="2"/>
+  <text x="400" y="40" font-family="Arial" font-size="14" text-anchor="middle" fill="#ea4335">Internet</text>
+  
+  <!-- Security Perimeter -->
+  <rect x="80" y="130" width="640" height="390" fill="none" stroke="#ea4335" stroke-width="2" stroke-dasharray="10,5" rx="15"/>
+  <text x="170" y="520" font-family="Arial" font-size="14" fill="#ea4335">VPC Service Controls Perimeter</text>
+  
+  <!-- Connection Lines -->
+  <!-- Internet to Public Cloud Run -->
+  <line x1="400" y1="80" x2="240" y2="350" stroke="#ea4335" stroke-width="2"/>
+  <polygon points="240,340 235,355 245,355" fill="#ea4335"/>
+  
+  <!-- Private Cloud Run to Vertex AI -->
+  <line x1="330" y1="280" x2="470" y2="280" stroke="#3367d6" stroke-width="2"/>
+  <polygon points="460,275 475,280 460,285" fill="#3367d6"/>
+  
+  <!-- Public Cloud Run to Vertex AI -->
+  <line x1="330" y1="380" x2="470" y2="280" stroke="#3367d6" stroke-width="2"/>
+  <polygon points="460,275 475,280 460,285" fill="#3367d6"/>
+  
+  <!-- Cloud Run to Secret Manager -->
+  <line x1="330" y1="380" x2="470" y2="380" stroke="#f4b400" stroke-width="2"/>
+  <polygon points="460,375 475,380 460,385" fill="#f4b400"/>
+  
+  <!-- Legend -->
+  <rect x="620" y="520" width="15" height="15" fill="none" stroke="#ea4335" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="640" y="532" font-family="Arial" font-size="12" fill="#333">Security Perimeter</text>
+  
+  <rect x="620" y="545" width="15" height="15" fill="#d0e0f7" stroke="#3367d6" stroke-width="1"/>
+  <text x="640" y="557" font-family="Arial" font-size="12" fill="#333">Private Network</text>
+  
+  <line x1="700" y1="520" x2="715" y2="535" stroke="#4285F4" stroke-width="2"/>
+  <text x="720" y="532" font-family="Arial" font-size="12" fill="#333">Data Flow</text>
+</svg>

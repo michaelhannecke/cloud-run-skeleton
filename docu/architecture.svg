@@ -1,0 +1,107 @@
+<svg width="950" height="700" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="font-family: Arial, sans-serif; font-size: 12px; background-color: #f9f9f9;">
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+     <marker id="arrowhead-private" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#006400"/> </marker>
+     <marker id="arrowhead-iam" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#DAA520"/> </marker>
+    <marker id="arrowhead-public" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/> </marker>
+  </defs>
+
+  <rect x="10" y="200" width="100" height="60" fill="#e3f2fd" stroke="#90caf9" stroke-width="1" rx="5" ry="5"/>
+  <text x="20" y="225">Internet</text>
+  <text x="20" y="240">Users</text>
+
+
+  <rect x="130" y="10" width="810" height="680" fill="#e3f2fd" stroke="#90caf9" stroke-width="2" rx="10" ry="10"/>
+  <text x="140" y="35" font-weight="bold" font-size="14px">Google Cloud Project (ID: ${var.gcp_project_id})</text>
+
+  <rect x="150" y="60" width="480" height="500" fill="#fffde7" stroke="#fff176" stroke-width="1.5" rx="8" ry="8"/>
+  <text x="160" y="85" font-weight="bold">Custom VPC (${var.vpc_network_name})</text>
+  <text x="160" y="105" fill="#555">Region: ${var.gcp_region}</text>
+
+  <rect x="170" y="130" width="440" height="180" fill="#e8f5e9" stroke="#a5d6a7" stroke-width="1" rx="5" ry="5"/>
+  <text x="180" y="150" font-weight="bold">Subnet (${var.vpc_subnet_name})</text>
+  <text x="180" y="170">CIDR: ${var.vpc_subnet_cidr}</text>
+  <text x="180" y="190" fill="#1b5e20" font-weight="bold">Private Google Access: Enabled</text>
+
+  <rect x="200" y="210" width="240" height="80" fill="#fce4ec" stroke="#f8bbd0" stroke-width="1.5" rx="5" ry="5"/>
+   <text x="210" y="230" font-weight="bold" fill="#ad1457">Cloud Run Service</text>
+   <text x="210" y="245" fill="#ad1457">(${var.cloud_run_service_name})</text>
+   <text x="210" y="260" fill="#ad1457" font-size="10px">Ingress: ALL (Public)</text>
+   <text x="210" y="275" fill="#ad1457" font-size="10px">Uses SA &amp; VPC Connector</text> <rect x="460" y="210" width="130" height="80" fill="#fffde7" stroke="#ffcc80" stroke-width="1.5" rx="5" ry="5"/>
+  <text x="470" y="230" font-weight="bold">VPC Access</text>
+  <text x="470" y="245" font-weight="bold">Connector</text>
+  <text x="470" y="260" font-size="10px">CIDR: ${var.vpc_connector_cidr}</text>
+  <text x="470" y="275" font-size="10px">(${var.vpc_subnet_name}-conn)</text>
+
+   <rect x="170" y="330" width="440" height="140" fill="#e3f2fd" stroke="#90caf9" stroke-width="1" rx="5" ry="5"/>
+  <text x="180" y="350" font-weight="bold">Private DNS Zone (${var.private_dns_zone_name})</text>
+  <text x="180" y="370">Domain: ${var.private_dns_zone_domain}</text>
+  <text x="180" y="390" fill="#1e88e5">Attached to: ${var.vpc_network_name}</text>
+  <text x="180" y="410" fill="#1e88e5">A Record: restricted.googleapis.com</text>
+  <text x="200" y="425" fill="#1e88e5">--> 199.36.153.4/30</text>
+  <text x="180" y="445" fill="#1e88e5">CNAME Record: *.googleapis.com</text>
+  <text x="200" y="460" fill="#1e88e5">--> restricted.googleapis.com</text>
+
+
+  <rect x="650" y="80" width="280" height="80" fill="#fff3e0" stroke="#ffcc80" stroke-width="1" rx="5" ry="5"/>
+  <text x="660" y="100" font-weight="bold">Artifact Registry Repo</text>
+  <text x="660" y="120">Name: ${var.artifact_registry_repo_name}</text>
+  <text x="660" y="140">Format: Docker</text>
+
+
+   <rect x="650" y="190" width="280" height="120" fill="#f3e5f5" stroke="#ce93d8" stroke-width="1" rx="5" ry="5"/>
+  <text x="660" y="210" font-weight="bold">IAM Service Account (SA)</text>
+  <text x="660" y="230" font-size="11px">ID: ${var.cloud_run_service_account_id}</text>
+  <text x="660" y="250" font-size="11px">Email: ...@${var.gcp_project_id}.iam.gserviceaccount.com</text>
+  <text x="660" y="270" fill="#6a1b9a">Purpose: Cloud Run Identity</text>
+  <text x="660" y="290" font-size="10px" fill="#6a1b9a">Roles: aiplatform.user, vpcaccess.user,</text>
+  <text x="670" y="300" font-size="10px" fill="#6a1b9a">artifactregistry.reader, ...</text>
+
+  <rect x="650" y="330" width="280" height="50" fill="#eeeeee" stroke="#bdbdbd" stroke-width="1" rx="5" ry="5" stroke-dasharray="3"/>
+   <text x="660" y="350" font-weight="bold">Cloud Run Service Agent</text>
+   <text x="660" y="365" font-size="10px">service-...@serverless-robot...</text>
+
+   <rect x="650" y="450" width="280" height="100" fill="#eceff1" stroke="#b0bec5" stroke-width="1" rx="5" ry="5"/>
+   <text x="660" y="470" font-weight="bold">Google APIs</text>
+   <text x="660" y="490">(e.g., Vertex AI, Cloud Run Mgmt,</text>
+   <text x="660" y="505">Artifact Registry, etc.)</text>
+   <text x="660" y="530" fill="#006400" font-weight="bold">Accessed via restricted.googleapis.com</text>
+
+
+   <line x1="110" y1="230" x2="200" y2="240" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead-public)"/>
+    <text x="120" y="255" fill="#1565c0" font-size="10px">Public HTTPS</text>
+
+   <line x1="440" y1="250" x2="650" y2="245" stroke="#ad1457" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+   <text x="530" y="240" fill="#ad1457" font-size="10px">runs as</text>
+
+    <line x1="440" y1="250" x2="460" y2="250" stroke="#ad1457" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <text x="400" y="300" fill="#ad1457" font-size="10px">uses network via</text>
+
+    <path d="M 320 210 Q 500 150, 650 120" stroke="#DAA520" stroke-width="1.5" fill="none" marker-end="url(#arrowhead-iam)" stroke-dasharray="4, 4"/>
+    <text x="470" y="160" fill="#DAA520" font-size="10px">pulls image (using SA)</text>
+
+    <path d="M 320 290 Q 450 380, 650 480" stroke="#006400" stroke-width="2" fill="none" marker-end="url(#arrowhead-private)" stroke-dasharray="5, 5"/>
+   <text x="450" y="390" fill="#006400" font-size="10px">Private API Call to Vertex AI (future)</text>
+   <text x="450" y="405" fill="#006400" font-size="10px">(via Private DNS &amp; restricted VIPs)</text> <path d="M 790 310 Q 750 380, 700 450" stroke="#DAA520" stroke-width="1.5" fill="none" marker-end="url(#arrowhead-iam)"/>
+    <text x="700" y="390" fill="#DAA520" font-size="10px">Has 'aiplatform.user' role</text>
+
+    <path d="M 650 270 Q 600 270, 590 250" stroke="#DAA520" stroke-width="1.5" fill="none" marker-end="url(#arrowhead-iam)"/>
+    <text x="570" y="280" fill="#DAA520" font-size="10px">Has 'vpcaccess.user' role</text>
+
+     <path d="M 650 350 Q 610 330, 590 270" stroke="#DAA520" stroke-width="1.5" fill="none" marker-end="url(#arrowhead-iam)" stroke-dasharray="3"/>
+    <text x="570" y="330" fill="#DAA520" font-size="10px">Has 'vpcaccess.user' role</text>
+
+
+  <text x="150" y="600" font-weight="bold">Notes:</text>
+  <text x="150" y="615" fill="#555">- Solid lines indicate deployed resources &amp; primary relationships.</text> <text x="150" y="630" fill="#555">- Dashed lines indicate conceptual flows or permissions.</text>
+  <text x="150" y="645" fill="#1565c0">- Blue lines indicate public network traffic.</text>
+  <text x="150" y="660" fill="#006400">- Green lines indicate private network traffic to Google APIs.</text>
+  <text x="150" y="675" fill="#DAA520">- Yellow/Gold lines indicate IAM permissions/relationships.</text>
+
+</svg>
