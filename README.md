@@ -4,7 +4,7 @@ This repository contains Terraform code to deploy a secure Cloud Run environment
 
 ## Architecture Overview
 
-![Architecture Diagram](./docs/architecture-diagram.svg)
+![Architecture Diagram](./docu/architecture-diagram.svg)
 
 The architecture includes:
 

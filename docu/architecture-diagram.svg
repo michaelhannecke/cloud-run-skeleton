@@ -34,18 +34,18 @@
   <text x="560" y="380" font-family="Arial" font-size="14" text-anchor="middle" fill="#f4b400">Secret Manager</text>
   <text x="560" y="400" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">API Keys, Credentials</text>
   
-  <!-- Internet Gateway -->
-  <path d="M400,80 L450,50 L350,50 Z" fill="#ffffff" stroke="#ea4335" stroke-width="2"/>
-  <text x="400" y="40" font-family="Arial" font-size="14" text-anchor="middle" fill="#ea4335">Internet</text>
+  <!-- Internet Icon - Moved to the left -->
+  <path d="M20,400 L70,370 L70,430 Z" fill="#ffffff" stroke="#ea4335" stroke-width="2"/>
+  <text x="45" y="350" font-family="Arial" font-size="14" text-anchor="middle" fill="#ea4335">Internet</text>
   
   <!-- Security Perimeter -->
   <rect x="80" y="130" width="640" height="390" fill="none" stroke="#ea4335" stroke-width="2" stroke-dasharray="10,5" rx="15"/>
   <text x="170" y="520" font-family="Arial" font-size="14" fill="#ea4335">VPC Service Controls Perimeter</text>
   
   <!-- Connection Lines -->
-  <!-- Internet to Public Cloud Run -->
-  <line x1="400" y1="80" x2="240" y2="350" stroke="#ea4335" stroke-width="2"/>
-  <polygon points="240,340 235,355 245,355" fill="#ea4335"/>
+  <!-- Internet to Public Cloud Run - Modified to come from left -->
+  <line x1="70" y1="400" x2="150" y2="400" stroke="#ea4335" stroke-width="2"/>
+  <polygon points="140,395 155,400 140,405" fill="#ea4335"/>
   
   <!-- Private Cloud Run to Vertex AI -->
   <line x1="330" y1="280" x2="470" y2="280" stroke="#3367d6" stroke-width="2"/>
