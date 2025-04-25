@@ -259,13 +259,3 @@ This repository can be integrated with CI/CD pipelines (GitHub Actions, Cloud Bu
 - **Permission Issues**: Ensure your service account has the necessary permissions to create all resources.
 - **VPC Service Controls**: If you encounter issues accessing services, check if VPC Service Controls are blocking access.
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-## License
-
-[MIT License](LICENSE)
